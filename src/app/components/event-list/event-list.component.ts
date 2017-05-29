@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {LocalDataSource} from 'ng2-smart-table';
+import {EventsService} from '../../services/events/events.service';
+import {TableListService} from '../../services/tableData/table-list.service';
+import {ToasterMessageService} from '../shared/toaster/services/toaster-message.service';
 
 @Component({
   selector: 'app-event-list',
@@ -7,50 +10,21 @@ import {LocalDataSource} from 'ng2-smart-table';
   styleUrls: ['./event-list.component.css']
 })
 export class EventListComponent implements OnInit {
-  events: any;
+  events: any[];
+  data: any[];
   settings: {};
-  data: any;
   source: LocalDataSource;
 
-  constructor() {
+  constructor(private eventService: EventsService,
+              private tableData: TableListService,
+              private toasterService: ToasterMessageService) {
     this.source = new LocalDataSource(this.data);
+    this.toasterService = toasterService;
   }
 
   ngOnInit() {
-
-    this.events = [
-      {
-        id: 1,
-        name: 'Angular Connect',
-        date: '18/05/2017',
-        price: 399.9,
-        time: "2:17 PM"
-      },
-      {
-        id: 2,
-        name: 'Angular Connect',
-        date: '18/05/2017',
-        time: '10:17 PM',
-        price: 399.9,
-        location: {
-          address: 'Mosu nr.6',
-          city: 'Iasi',
-          country: 'Romania'
-        }
-      },
-      {
-        id: 3,
-        name: 'Angular Connect',
-        date: '18/05/2017',
-        time: '2:17 PM',
-        price: 399.9,
-        location: {
-          address: 'Mosu nr.6',
-          city: 'Iasi',
-          country: 'Romania'
-        }
-      }
-    ];
+    this.events = this.eventService.getEvents();
+    this.data = this.tableData.getTableData();
 
     this.settings = {
       columns: {
@@ -69,42 +43,9 @@ export class EventListComponent implements OnInit {
         }
       }
     };
-
-    this.data = [
-      {
-        id: 1,
-        name: "Leanne Graham",
-        username: "Bret",
-        email: "Sincere@april.biz"
-      },
-      {
-        id: 2,
-        name: "Leanne Sui",
-        username: "Bret",
-        email: "Sincere@april.biz"
-      },
-      {
-        id: 3,
-        name: "Sander Graham",
-        username: "Bret",
-        email: "Sincere@april.biz"
-      },
-      {
-        id: 4,
-        name: "Bram Bret",
-        username: "Bret",
-        email: "Sincere@april.biz"
-      },
-      {
-        id: 5,
-        name: "Nicholas DuBuque",
-        username: "Nicholas.Stanton",
-        email: "Rey.Padberg@rosamond.biz"
-      }
-    ];
   }
 
-  handleEventClicked(data) {
-    console.log("received:", data);
+  handleEventClicked() {
+    this.toasterService.showSuccess("Succes Toaster Message");
   }
 }
