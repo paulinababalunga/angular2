@@ -1,0 +1,12 @@
+.event-list {
+  background-color:  #ccc;
+}
+
+.event-list__title {
+  font-size: 32px;
+  padding: 20px 40px 0;
+}
+
+.event-list__thumb {
+  padding: 0 40px;
+}

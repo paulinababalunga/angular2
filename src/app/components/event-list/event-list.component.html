@@ -1,0 +1,10 @@
+<app-navbar></app-navbar>
+<div class="event-list">
+  <div class="event-list__title">List of events</div>
+  <app-event-thumbnail  *ngFor="let event of events" [event]="event" (eventClick)="handleEventClicked($event)"></app-event-thumbnail>
+  <div class="event-list__thumb">
+    <!--<button class="btn-action" (click)="thumbnail.clickMe()">Click Me too!</button>-->
+    <!--<span>{{thumbnail.someProperty}}</span>-->
+    <ng2-smart-table [settings]="settings" [source]="data"></ng2-smart-table>
+  </div>
+</div>

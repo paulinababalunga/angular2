@@ -1,0 +1,19 @@
+<div class="event-container">
+  <div>Name: {{event.name}}</div>
+  <div [hidden]="!event?.location">
+    <div>Address: {{event?.location?.address}}</div>
+    <div>City: {{event?.location?.city}}</div>
+    <div>Country: {{event?.location?.country}}</div>
+  </div>
+  <div [ngSwitch]="event?.time">
+    Time: {{event?.time}}
+    <span *ngSwitchCase="'10:17 PM'">(Late Start)</span>
+    <span *ngSwitchCase="'2:17 PM'">(Normal Start)</span>
+    <span *ngSwitchDefault>(Default Start)</span>
+  </div>
+  <div >Price: ${{event.price}}</div>
+  <div>Date: {{event.date}}</div>
+  <button class="btn-action" (click)="handleClickMe()">Click Me!</button>
+</div>
+
+<!--ngIf do not display and hidden to hide -->

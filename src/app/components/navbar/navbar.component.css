@@ -1,0 +1,16 @@
+.nav-bar {
+  background-color: blue;
+  height: 56px;
+}
+
+ul {
+  list-style: none;
+}
+
+
+ul li {
+  display: inline-block;
+  padding: 5px 15px;
+  color: white;
+
+}
