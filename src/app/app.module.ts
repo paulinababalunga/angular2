@@ -4,7 +4,6 @@ import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 
 import {AppComponent} from './app.component';
-import {HomeComponent} from './components/home/home.component';
 import {AppRoutingModule} from './app-routing.module';
 import {EventListComponent} from './components/event-list/event-list.component';
 import {EventThumbnailComponent} from './components/event-list/event-thumbnail/event-thumbnail.component';
@@ -16,15 +15,23 @@ import {ToasterModule} from 'angular2-toaster';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ToasterComponent} from './components/shared/toaster/toaster.component';
 import {ToasterMessageService} from './components/shared/toaster/services/toaster-message.service';
+import {TableListComponent} from './components/table-list/table-list.component';
+import {EventDetailComponent} from './components/event-detail/event-detail.component';
+import {CreateEventComponent} from './components/create-event/create-event.component';
+import {ErrorsComponent} from './components/errors/errors.component';
+import {EventRouteActivatorService} from './services/event-route-activator/event-route-activator.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     EventListComponent,
     EventThumbnailComponent,
+    EventDetailComponent,
+    CreateEventComponent,
     NavbarComponent,
-    ToasterComponent
+    ToasterComponent,
+    TableListComponent,
+    ErrorsComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +45,8 @@ import {ToasterMessageService} from './components/shared/toaster/services/toaste
   providers: [
     EventsService,
     TableListService,
-    ToasterMessageService
+    ToasterMessageService,
+    EventRouteActivatorService
   ],
   bootstrap: [AppComponent]
 })

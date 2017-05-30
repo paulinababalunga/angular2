@@ -4,7 +4,7 @@ import {ToasterConfig} from 'angular2-toaster';
 @Component({
   selector: 'app-toaster',
   templateUrl: './toaster.component.html',
-  styleUrls: ['./toaster.component.css']
+  styleUrls: ['./toaster.component.scss']
 })
 export class ToasterComponent {
 

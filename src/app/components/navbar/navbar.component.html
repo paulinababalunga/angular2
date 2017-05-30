@@ -1,9 +1,8 @@
 <div class="nav-bar">
-  <ul>
-    <li (click)="toHome()">Event list</li>
-    <li>Event table</li>
-    <li>Contact Us</li>
-  </ul>
+  <div class="nav-bar__links">
+    <a [routerLink]="['/events']" routerLinkActive="active">Events list</a>
+    <a [routerLink]="['/events/new']" routerLinkActive="active">New event</a>
+    <a [routerLink]="['/tableList']" routerLinkActive="active">Events table</a>
+    <a>Contact Us</a>
+  </div>
 </div>
-
-<script>toastr.success('Have fun storming the castle!', 'Miracle Max Says')</script>

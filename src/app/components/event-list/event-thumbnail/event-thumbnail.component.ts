@@ -3,15 +3,13 @@ import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 @Component({
   selector: 'app-event-thumbnail',
   templateUrl: './event-thumbnail.component.html',
-  styleUrls: ['./event-thumbnail.component.css']
+  styleUrls: ['./event-thumbnail.component.scss']
 })
 export class EventThumbnailComponent implements OnInit {
 
   @Input() event: any;
 
   @Output() eventClick = new EventEmitter();
-
-  someProperty: any = "someProperty";
 
   constructor() { }
 
@@ -20,9 +18,5 @@ export class EventThumbnailComponent implements OnInit {
 
   handleClickMe() {
     this.eventClick.emit(this.event.name);
-  }
-
-  clickMe() {
-    console.log("foo");
   }
 }

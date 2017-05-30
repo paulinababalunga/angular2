@@ -1,0 +1,17 @@
+.nav-bar {
+  background-color: blue;
+  //position: fixed;
+  width: 100%;
+}
+
+.nav-bar__links {
+  display: flex;
+  align-items: flex-end;
+}
+
+a {
+  display: inline-block;
+  padding: 15px;
+  color: white;
+  text-decoration: none;
+}

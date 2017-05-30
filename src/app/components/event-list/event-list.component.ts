@@ -7,7 +7,7 @@ import {ToasterMessageService} from '../shared/toaster/services/toaster-message.
 @Component({
   selector: 'app-event-list',
   templateUrl: './event-list.component.html',
-  styleUrls: ['./event-list.component.css']
+  styleUrls: ['./event-list.component.scss']
 })
 export class EventListComponent implements OnInit {
   events: any[];

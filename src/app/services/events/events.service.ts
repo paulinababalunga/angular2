@@ -1,10 +1,14 @@
 import {Injectable} from '@angular/core';
 
 @Injectable()
-export class EventsService{
+export class EventsService {
 
   getEvents() {
     return EVENTS;
+  }
+
+  getEvent(id: number) {
+    return EVENTS.find(event => event.id === id);
   }
 }
 
@@ -19,7 +23,7 @@ const EVENTS = [
   {
     id: 2,
     name: 'Angular Connect',
-    date: '18/05/2017',
+    date: '19/05/2016',
     time: '10:17 PM',
     price: 499.9,
     location: {
@@ -31,12 +35,24 @@ const EVENTS = [
   {
     id: 3,
     name: 'Angular Connect',
-    date: '18/05/2017',
+    date: '10/05/2017',
     time: '2:17 PM',
     price: 599.9,
     location: {
       address: 'Mosu nr.6',
-      city: 'Iasi',
+      city: 'Cluj',
+      country: 'Romania'
+    }
+  },
+  {
+    id: 4,
+    name: 'Angular Connect',
+    date: '09/07/2015',
+    time: '2:17 PM',
+    price: 799.9,
+    location: {
+      address: 'Mosu nr.6',
+      city: 'Bucuresti',
       country: 'Romania'
     }
   }
