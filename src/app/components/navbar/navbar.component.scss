@@ -1,12 +1,13 @@
+@import "../../../variables.scss";
+
 .nav-bar {
-  background-color: blue;
+  background-color: $color-brand-blue;
   //position: fixed;
   width: 100%;
 }
 
 .nav-bar__links {
   display: flex;
-  align-items: flex-end;
 }
 
 a {
@@ -14,4 +15,16 @@ a {
   padding: 15px;
   color: white;
   text-decoration: none;
+
+  &.active {
+    color: black;
+    font-weight: bold;
+  }
+}
+
+.nav-bar__links--left{
+  float: left;
+}
+.nav-bar__links--right {
+  float: right;
 }

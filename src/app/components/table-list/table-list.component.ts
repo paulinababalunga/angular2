@@ -10,12 +10,10 @@ import {TableListService} from '../../services/tableData/table-list.service';
 export class TableListComponent implements OnInit {
 
   settings = {};
-  events: any[];
   data: any[];
-  constructor(private eventService: EventsService, private tableData: TableListService) { }
+  constructor(private tableData: TableListService) { }
 
   ngOnInit() {
-    this.events = this.eventService.getEvents();
     this.data = this.tableData.getTableData();
 
     this.settings = {

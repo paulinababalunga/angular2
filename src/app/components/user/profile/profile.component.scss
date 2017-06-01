@@ -1,4 +1,8 @@
-.eventForm {
+.editContainer {
+  padding: 20px 40px;
+}
+
+.editForm {
   padding: 20px 0;
 
   input[type="text"], input[type="password"] {
@@ -6,8 +10,4 @@
     margin: 5px 0;
     width: 100%;
   }
-}
-
-.event-container {
-  padding: 20px 40px;
 }

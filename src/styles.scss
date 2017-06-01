@@ -1,17 +1,24 @@
+@import "variables";
+
 .btn-action {
-  background-color: orange;
-  color: white;
+  background-color: $color-brand-orange;
+  color: $color-brand-white;
   padding: 10px;
   border: none;
   cursor: pointer;
 }
 
 .btn-cancel {
-  background-color: #cccccc;
-  color: white;
+  background-color: $color-brand-gray;
+  color: $color-brand-white;
   padding: 10px;
   border: none;
   cursor: pointer;
+}
+
+.error-message {
+  float: right;
+  color: $color-brand-orange;
 }
 /* You can add global styles to this file, and also import other style files */
 

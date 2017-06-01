@@ -3,6 +3,7 @@ import {LocalDataSource} from 'ng2-smart-table';
 import {EventsService} from '../../services/events/events.service';
 import {TableListService} from '../../services/tableData/table-list.service';
 import {ToasterMessageService} from '../shared/toaster/services/toaster-message.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-event-list',
@@ -10,39 +11,19 @@ import {ToasterMessageService} from '../shared/toaster/services/toaster-message.
   styleUrls: ['./event-list.component.scss']
 })
 export class EventListComponent implements OnInit {
-  events: any[];
-  data: any[];
-  settings: {};
-  source: LocalDataSource;
+  events: any;
 
-  constructor(private eventService: EventsService,
-              private tableData: TableListService,
-              private toasterService: ToasterMessageService) {
-    this.source = new LocalDataSource(this.data);
+  constructor(private toasterService: ToasterMessageService,
+              private route: ActivatedRoute) {
     this.toasterService = toasterService;
   }
 
   ngOnInit() {
-    this.events = this.eventService.getEvents();
-    this.data = this.tableData.getTableData();
+    //this.eventService.getEvents().subscribe(events => {
+    //this.events = events
+    // });                                             => without resolver
 
-    this.settings = {
-      columns: {
-        id: {
-          title: 'ID',
-          filter: true
-        },
-        name: {
-          title: 'Full Name'
-        },
-        username: {
-          title: 'User Name'
-        },
-        email: {
-          title: 'Email'
-        }
-      }
-    };
+    this.events = this.route.snapshot.data['events'];
   }
 
   handleEventClicked() {

@@ -1,5 +1,57 @@
-<div>
-  <h2>Add new event</h2>
-  <button class="btn-action">Save</button>
-  <button (click)="cancel()" class="btn-cancel">Cancel</button>
+<div class="event-container">
+  <form #newEventForm="ngForm" (ngSubmit)="login(newEventForm.value)" autocomplete="off" novalidate>
+    <h2>Add new event</h2>
+    <hr/>
+    <div class="eventForm">
+      <div>
+        <label for="name">Name:</label>
+        <em *ngIf="newEventForm.controls.name?.invalid && (newEventForm.controls.name.touched || mouseoverLogin)"
+            class="error-message">*Required</em>
+        <input type="text"
+               (ngModel)="name"
+               id="name"
+               name="name"
+               placeholder="event name..."
+               required/>
+
+      </div>
+      <div>
+        <label for="address">Address:</label>
+        <em *ngIf="newEventForm.controls.address?.invalid && (newEventForm.controls.address.touched || mouseoverLogin)"
+            class="error-message"> *Required</em>
+        <input type="text"
+               placeholder="address here.."
+               id="address"
+               (ngModel)="address"
+               name="address"
+               required/>
+      </div>
+      <div>
+        <label for="city">City:</label>
+        <em *ngIf="newEventForm.controls.city?.invalid && (newEventForm.controls.city.touched || mouseoverLogin)"
+            class="error-message"> *Required</em>
+        <input type="text"
+               placeholder="city here.."
+               id="city"
+               (ngModel)="city"
+               name="city"
+               required/>
+      </div>
+      <div>
+        <label for="time">Time:</label>
+        <em *ngIf="newEventForm.controls.time?.invalid && (newEventForm.controls.time.touched || mouseoverLogin)"
+            class="error-message"> *Required</em>
+        <input type="text"
+               placeholder="time here.."
+               id="time"
+               (ngModel)="time"
+               name="time"
+               required/>
+      </div>
+    </div>
+    <span (mouseenter)="mouseoverLogin=true" (mouseleave)="mouseoverLogin=false">
+      <button class="btn-action" [disabled]="newEventForm.invalid">Save</button>
+    </span>
+    <button class="btn-cancel" (click)="cancel()">Cancel</button>
+  </form>
 </div>

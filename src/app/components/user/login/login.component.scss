@@ -1,0 +1,21 @@
+@import "../../../../variables";
+
+.login {
+  width: 30%;
+  margin: 40px auto;
+  padding: 40px;
+  background-color: $color-brand-white;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+.loginForm {
+  padding: 20px 0;
+
+  input[type="text"], input[type="password"] {
+    padding: 8px;
+    margin: 5px 0;
+    width: 100%;
+  }
+}
+
+

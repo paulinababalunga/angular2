@@ -20,6 +20,8 @@ import {EventDetailComponent} from './components/event-detail/event-detail.compo
 import {CreateEventComponent} from './components/create-event/create-event.component';
 import {ErrorsComponent} from './components/errors/errors.component';
 import {EventRouteActivatorService} from './services/event-route-activator/event-route-activator.service';
+import {EventListResolverService} from './services/events/event-list-resolver.service';
+import {AuthService} from './services/auth/auth.service';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,9 @@ import {EventRouteActivatorService} from './services/event-route-activator/event
     EventsService,
     TableListService,
     ToasterMessageService,
-    EventRouteActivatorService
+    EventRouteActivatorService,
+    EventListResolverService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
