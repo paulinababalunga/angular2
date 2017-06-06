@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 import {FormGroup, FormControl, Validators} from '@angular/forms';
 import {ISessions} from '../../../services/events/event.model';
 import {Router} from '@angular/router';
@@ -9,6 +9,9 @@ import {Router} from '@angular/router';
   styleUrls: ['./create-session.component.scss']
 })
 export class CreateSessionComponent implements OnInit {
+
+  @Output() saveNewSession = new EventEmitter();
+  @Output() cancelSaveSession = new EventEmitter();
 
   sessionForm: FormGroup;
   name: FormControl;
@@ -45,11 +48,10 @@ export class CreateSessionComponent implements OnInit {
       voters: formValues.voters,
       id: undefined
     };
-    console.log(sessions);
-    this.route.navigate(['events']);
+    this.saveNewSession.emit(sessions);
   }
 
   cancel(){
-    this.route.navigate(['events']);
+    this.cancelSaveSession.emit();
   }
 }

@@ -1,6 +1,22 @@
+@import "../../../variables";
+
 .event-container {
   padding: 40px;
   border-top: 1px solid white;
   background-color: floralwhite;
 }
 
+.session-list{
+  display: flex;
+}
+
+.session-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.session-link {
+  padding: 7px;
+  cursor: pointer;
+  text-decoration: underline;
+}
