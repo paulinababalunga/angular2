@@ -1,6 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 
 import {AppComponent} from './app.component';
@@ -22,6 +22,8 @@ import {ErrorsComponent} from './components/errors/errors.component';
 import {EventRouteActivatorService} from './services/event-route-activator/event-route-activator.service';
 import {EventListResolverService} from './services/events/event-list-resolver.service';
 import {AuthService} from './services/auth/auth.service';
+import {CreateSessionComponent} from './components/event-detail/create-session/create-session.component';
+import {SessionListComponent} from './components/event-detail/session-list/session-list.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import {AuthService} from './services/auth/auth.service';
     NavbarComponent,
     ToasterComponent,
     TableListComponent,
-    ErrorsComponent
+    ErrorsComponent,
+    CreateSessionComponent,
+    SessionListComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +46,8 @@ import {AuthService} from './services/auth/auth.service';
     Ng2SmartTableModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    ToasterModule
+    ToasterModule,
+    ReactiveFormsModule
   ],
   providers: [
     EventsService,

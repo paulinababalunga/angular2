@@ -7,6 +7,7 @@ import {CreateEventComponent} from './components/create-event/create-event.compo
 import {ErrorsComponent} from './components/errors/errors.component';
 import {EventRouteActivatorService} from './services/event-route-activator/event-route-activator.service';
 import {EventListResolverService} from './services/events/event-list-resolver.service';
+import {CreateSessionComponent} from './components/event-detail/create-session/create-session.component';
 
 
 const appRoutes: Routes = [
@@ -29,6 +30,10 @@ const appRoutes: Routes = [
   {
     path: 'tableList',
     component: TableListComponent
+  },
+  {
+    path: 'session/new',
+    component: CreateSessionComponent
   },
   {
     path: '404',

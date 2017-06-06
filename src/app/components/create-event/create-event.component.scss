@@ -1,7 +1,10 @@
 .eventForm {
   padding: 20px 0;
 
-  input[type="text"], input[type="password"] {
+  input[type="text"],
+  input[type="password"],
+  input[type=time],
+  input[type=date]{
     padding: 8px;
     margin: 5px 0;
     width: 100%;

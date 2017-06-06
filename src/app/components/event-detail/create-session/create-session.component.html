@@ -1,0 +1,68 @@
+<div class="session-container">
+  <form [formGroup]="sessionForm" (ngSubmit)="saveSession(sessionForm.value)" novalidate>
+    <h2>Add new session</h2>
+    <hr/>
+    <div class="eventForm">
+      <div>
+        <label for="name">Name:</label>
+        <em *ngIf="name.invalid && name.dirty"
+            class="error-message">*Required</em>
+        <input type="text"
+               id="name"
+               name="name"
+               placeholder="event name..."
+               formControlName="name"
+               class="form-group"
+        />
+      </div>
+      <div>
+        <label for="presenter">Presenter:</label>
+        <em *ngIf="presenter.invalid && presenter.dirty"
+            class="error-message"> *Required</em>
+        <input type="text"
+               placeholder="presenter name here.."
+               id="presenter"
+               formControlName="presenter"
+               class="form-group"
+        />
+      </div>
+      <div>
+        <label for="duration">Duration:</label>
+        <em *ngIf="duration.invalid && duration.dirty"
+            class="error-message"> *Required</em>
+        <select formControlName="duration" class="form-group" id="duration">
+          <option value="">select duration</option>
+          <option value=1>Half hour</option>
+          <option value=2>1 Hour</option>
+          <option value=3>Part Time</option>
+          <option value=4>Full day</option>
+        </select>
+      </div>
+      <div>
+        <label for="level">Level:</label>
+        <em *ngIf="level.invalid && level.dirty"
+            class="error-message"> *Required</em>
+        <select formControlName="level" class="form-group" id="level">
+          <option value="">Select level</option>
+          <option value="beginner">Beginner</option>
+          <option value="Intermediate">Intermediate</option>
+          <option value="advanced">Advanced</option>
+        </select>
+      </div>
+      <div>
+        <label for="voters">Voters:</label>
+        <input type="text"
+               placeholder="voters here.."
+               formControlName="voters"
+               id="voters"
+               class="form-group"
+        />
+      </div>
+    </div>
+    <span>
+      <button class="btn-action" type="submit" [disabled]="sessionForm.invalid">Save</button>
+    </span>
+    <button class="btn-cancel" (click)="cancel()">Cancel</button>
+  </form>
+</div>
+

@@ -14,5 +14,8 @@
   </div>
   <div>Price: ${{event?.price}}</div>
   <div>Date: {{event?.date}}</div>
+  <hr>
+  <h3>Session details:</h3>
+  <app-session-list [sessions]="event?.sessions"></app-session-list>
 </div>
 

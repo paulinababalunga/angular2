@@ -1,5 +1,5 @@
 <div class="event-container">
-  <form #newEventForm="ngForm" (ngSubmit)="login(newEventForm.value)" autocomplete="off" novalidate>
+  <form #newEventForm="ngForm" (ngSubmit)="saveEvent(newEventForm.value)" autocomplete="off" novalidate>
     <h2>Add new event</h2>
     <hr/>
     <div class="eventForm">
@@ -16,38 +16,69 @@
 
       </div>
       <div>
-        <label for="address">Address:</label>
-        <em *ngIf="newEventForm.controls.address?.invalid && (newEventForm.controls.address.touched || mouseoverLogin)"
-            class="error-message"> *Required</em>
-        <input type="text"
-               placeholder="address here.."
-               id="address"
-               (ngModel)="address"
-               name="address"
-               required/>
-      </div>
-      <div>
-        <label for="city">City:</label>
-        <em *ngIf="newEventForm.controls.city?.invalid && (newEventForm.controls.city.touched || mouseoverLogin)"
-            class="error-message"> *Required</em>
-        <input type="text"
-               placeholder="city here.."
-               id="city"
-               (ngModel)="city"
-               name="city"
-               required/>
-      </div>
-      <div>
         <label for="time">Time:</label>
         <em *ngIf="newEventForm.controls.time?.invalid && (newEventForm.controls.time.touched || mouseoverLogin)"
             class="error-message"> *Required</em>
-        <input type="text"
+        <input type="time"
                placeholder="time here.."
                id="time"
                (ngModel)="time"
                name="time"
                required/>
       </div>
+      <div>
+        <label for="date">Date:</label>
+        <em *ngIf="newEventForm.controls.date?.invalid && (newEventForm.controls.date.touched || mouseoverLogin)"
+            class="error-message"> *Required</em>
+        <input type="date"
+               placeholder="date here.."
+               id="date"
+               (ngModel)="date"
+               name="date"
+               required/>
+      </div>
+      <div>
+        <label for="price">Price:</label>
+        <em *ngIf="newEventForm.controls.price?.invalid && (newEventForm.controls.price.touched || mouseoverLogin)"
+            class="error-message"> *Required</em>
+        <input type="text"
+               placeholder="price here.."
+               id="price"
+               (ngModel)="price"
+               name="price"
+               required/>
+      </div>
+
+      <div ngModelGroup="location">
+        <div>
+          <label for="address">Address:</label>
+          <input type="text"
+                 placeholder="address here.."
+                 id="address"
+                 (ngModel)="address"
+                 name="address"
+          />
+        </div>
+        <div>
+          <label for="city">City:</label>
+          <input type="text"
+                 placeholder="city here.."
+                 id="city"
+                 (ngModel)="city"
+                 name="city"
+          />
+        </div>
+        <div>
+          <label for="country">Country:</label>
+          <input type="text"
+                 placeholder="country here.."
+                 id="country"
+                 (ngModel)="country"
+                 name="country"
+          />
+        </div>
+      </div>
+
     </div>
     <span (mouseenter)="mouseoverLogin=true" (mouseleave)="mouseoverLogin=false">
       <button class="btn-action" [disabled]="newEventForm.invalid">Save</button>

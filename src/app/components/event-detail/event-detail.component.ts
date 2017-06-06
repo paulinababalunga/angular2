@@ -9,6 +9,7 @@ import {EventsService} from '../../services/events/events.service';
 })
 export class EventDetailComponent implements OnInit {
   event: any;
+  session: any;
 
   constructor(private eventsService: EventsService, private route: ActivatedRoute) { }
 
