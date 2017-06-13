@@ -44,7 +44,7 @@ const EVENTS: IEvent[] = [
         name: 'John Papa',
         presenter: 'John Papa',
         duration: 20,
-        level: '2',
+        level: 'beginner',
         voters: ['John Papa', 'Paula']
       },
       {
@@ -52,7 +52,7 @@ const EVENTS: IEvent[] = [
         name: 'John Papa1',
         presenter: 'John Papa',
         duration: 20,
-        level: '2',
+        level: 'advanced',
         voters: ['John Papa', 'Paula']
       }]
   },
@@ -72,7 +72,7 @@ const EVENTS: IEvent[] = [
       name: 'John Papa',
       presenter: 'John Papa',
       duration: 20,
-      level: '2',
+      level: 'advanced',
       voters: ['John Papa', 'Paula']
     },
       {
@@ -80,7 +80,7 @@ const EVENTS: IEvent[] = [
         name: 'John Papa',
         presenter: 'John Papa',
         duration: 20,
-        level: '2',
+        level: 'beginner',
         voters: ['John Papa', 'Paula']
 
       },
@@ -89,7 +89,7 @@ const EVENTS: IEvent[] = [
         name: 'John Papa',
         presenter: 'John Papa',
         duration: 20,
-        level: '2',
+        level: 'advanced',
         voters: ['John Papa', 'Paula']
 
       },
@@ -98,7 +98,7 @@ const EVENTS: IEvent[] = [
         name: 'John Papa',
         presenter: 'John Papa',
         duration: 20,
-        level: '2',
+        level: 'begginer',
         voters: ['John Papa', 'Paula']
 
       }]
@@ -119,7 +119,7 @@ const EVENTS: IEvent[] = [
       name: 'John Papa',
       presenter: 'John Papa',
       duration: 20,
-      level: '2',
+      level: 'intermediate',
       voters: ['John Papa', 'Paula']
     }]
   },
@@ -139,7 +139,7 @@ const EVENTS: IEvent[] = [
       name: 'John Papa',
       presenter: 'John Papa',
       duration: 20,
-      level: '2',
+      level: 'advanced',
       voters: ['John Papa', 'Paula']
     }]
   }

@@ -1,6 +1,12 @@
 <div *ngFor="let session of sessions" class="session-container">
-  <div>Session name: {{session.name}}</div>
-  <div>Session presenter: {{session.presenter}}</div>
-  <div>Session duration: {{session.duration}}</div>
-  <div>Session level: {{session.level}}</div>
+  <app-collapsible-list>
+    <div collapse-title>
+      {{session.name}}
+    </div>
+    <div collapse-body>
+      <div>Session presenter: {{session.presenter}}</div>
+      <div>Session duration: {{session.duration}}</div>
+      <div>Session level: {{session.level}}</div>
+    </div>
+  </app-collapsible-list>
 </div>

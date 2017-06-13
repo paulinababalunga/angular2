@@ -24,6 +24,7 @@ import {EventListResolverService} from './services/events/event-list-resolver.se
 import {AuthService} from './services/auth/auth.service';
 import {CreateSessionComponent} from './components/event-detail/create-session/create-session.component';
 import {SessionListComponent} from './components/event-detail/session-list/session-list.component';
+import {CollapsibleListComponent} from './components/event-detail/session-list/collapsible-list/collapsible-list.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import {SessionListComponent} from './components/event-detail/session-list/sessi
     TableListComponent,
     ErrorsComponent,
     CreateSessionComponent,
-    SessionListComponent
+    SessionListComponent,
+    CollapsibleListComponent
   ],
   imports: [
     BrowserModule,
