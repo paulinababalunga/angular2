@@ -25,6 +25,7 @@ import {AuthService} from './services/auth/auth.service';
 import {CreateSessionComponent} from './components/event-detail/create-session/create-session.component';
 import {SessionListComponent} from './components/event-detail/session-list/session-list.component';
 import {CollapsibleListComponent} from './components/event-detail/session-list/collapsible-list/collapsible-list.component';
+import {DurationPipe} from './components/shared/duration/duration.pipe';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import {CollapsibleListComponent} from './components/event-detail/session-list/c
     ErrorsComponent,
     CreateSessionComponent,
     SessionListComponent,
-    CollapsibleListComponent
+    CollapsibleListComponent,
+    DurationPipe
   ],
   imports: [
     BrowserModule,

@@ -11,7 +11,7 @@
     <span *ngSwitchCase="'2:17 PM'">(Normal Start)</span>
     <span *ngSwitchDefault>(Default Start)</span>
   </div>
-  <div>Price: ${{event.price}}</div>
-  <div>Date: {{event.date}}</div>
+  <div>Price: {{event.price | currency: 'USD': 'true'}}</div>
+  <div>Date: {{event.date | date}}</div>
   <button class="btn-action" (click)="handleClickMe()">Click Me!</button>
 </div>

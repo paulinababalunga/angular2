@@ -12,16 +12,25 @@
     <span *ngSwitchCase="'2:17 PM'">(Normal Start)</span>
     <span *ngSwitchDefault>(Default Start)</span>
   </div>
-  <div>Price: ${{event?.price}}</div>
-  <div>Date: {{event?.date}}</div>
+  <div>Price: {{event?.price | currency:'USD':'true'}}</div>
+  <div>Date: {{event?.date | date}}</div>
   <hr>
   <div class="session-list">
     <div class="session-title">Session details:</div>
     <div class="session-link">
-    <a (click)="addSession()"> Add Session</a>
+      <button class="btn-cancel" [class.active]="sortBy==='name'" (click)="sortBy ='name'">By name</button>
+      <button class="btn-cancel" [class.active]="sortBy==='voters'" (click)="sortBy ='voters'">By voters</button>
+    </div>
+    <div class="session-link">
+      <button class="btn-cancel" [class.active]="filterBy==='all'" (click)="filterBy ='all'">All</button>
+      <button class="btn-cancel" [class.active]="filterBy==='beginner'" (click)="filterBy ='beginner'">Beginner</button>
+      <button class="btn-cancel" [class.active]="filterBy==='intermediate'" (click)="filterBy ='intermediate'">Intermediate</button>
+      <button class="btn-cancel" [class.active]="filterBy==='advanced'" (click)="filterBy ='advanced'">Advanced</button>
+      <a (click)="addSession()"> Add Session</a>
+    </div>
   </div>
-  </div>
-  <app-session-list [sessions]="event?.sessions" *ngIf="!addMode"></app-session-list>
-  <app-create-session *ngIf="addMode" (saveNewSession)="saveNewSession($event)" (cancelSaveSession)="cancelNewSession()"></app-create-session>
+  <app-session-list [sessions]="event?.sessions" *ngIf="!addMode" [sortBy]="sortBy" [filterBy]="filterBy"></app-session-list>
+  <app-create-session *ngIf="addMode" (saveNewSession)="saveNewSession($event)"
+                      (cancelSaveSession)="cancelNewSession()"></app-create-session>
 </div>
 

@@ -34,8 +34,8 @@ export class EventsService {
 const EVENTS: IEvent[] = [
   {
     id: 1,
-    name: 'Angular Connect',
-    date: new Date('18/05/2017'),
+    name: 'Angular Connect1',
+    date: new Date('10/07/2015'),
     price: 399.9,
     time: "2:17 PM",
     sessions: [
@@ -43,23 +43,23 @@ const EVENTS: IEvent[] = [
         id: 11,
         name: 'John Papa',
         presenter: 'John Papa',
-        duration: 20,
+        duration: 2,
         level: 'beginner',
-        voters: ['John Papa', 'Paula']
+        voters: ['John Papa', 'Paula', 'Maria']
       },
       {
         id: 17,
-        name: 'John Papa1',
+        name: 'Ana Maria',
         presenter: 'John Papa',
-        duration: 20,
+        duration: 1,
         level: 'advanced',
         voters: ['John Papa', 'Paula']
       }]
   },
   {
     id: 2,
-    name: 'Angular Connect',
-    date: new Date('19/05/2016'),
+    name: 'Angular Connect2',
+    date: new Date('09/04/2015'),
     time: '10:17 PM',
     price: 499.9,
     location: {
@@ -69,43 +69,43 @@ const EVENTS: IEvent[] = [
     },
     sessions: [{
       id: 12,
-      name: 'John Papa',
+      name: 'Vasile Papa',
       presenter: 'John Papa',
-      duration: 20,
+      duration: 3,
       level: 'advanced',
-      voters: ['John Papa', 'Paula']
+      voters: ['John Papa']
     },
       {
-        id: 12,
+        id: 13,
         name: 'John Papa',
-        presenter: 'John Papa',
-        duration: 20,
+        presenter: 'Tudor Papa',
+        duration: 4,
         level: 'beginner',
         voters: ['John Papa', 'Paula']
 
       },
       {
         id: 15,
-        name: 'John Papa',
+        name: 'Sanea Papa',
         presenter: 'John Papa',
         duration: 20,
         level: 'advanced',
-        voters: ['John Papa', 'Paula']
+        voters: ['John Papa', 'Paula','Madalina', 'Catalina']
 
       },
       {
         id: 16,
-        name: 'John Papa',
+        name: 'Tatiana Papa',
         presenter: 'John Papa',
-        duration: 20,
-        level: 'begginer',
+        duration: 1,
+        level: 'beginner',
         voters: ['John Papa', 'Paula']
 
       }]
   },
   {
-    id: 13,
-    name: 'Angular Connect',
+    id: 3,
+    name: 'Angular Connect3',
     date: new Date('10/05/2017'),
     time: '2:17 PM',
     price: 599.9,
@@ -116,16 +116,16 @@ const EVENTS: IEvent[] = [
     },
     sessions: [{
       id: 14,
-      name: 'John Papa',
+      name: 'Sorin Papa',
       presenter: 'John Papa',
-      duration: 20,
+      duration: 2,
       level: 'intermediate',
-      voters: ['John Papa', 'Paula']
+      voters: ['John Papa', 'Paula', 'Ion', 'Sorin']
     }]
   },
   {
     id: 4,
-    name: 'Angular Connect',
+    name: 'Angular Connect4',
     date: new Date('09/07/2015'),
     time: '2:17 PM',
     price: 799.9,
@@ -138,9 +138,25 @@ const EVENTS: IEvent[] = [
       id: 15,
       name: 'John Papa',
       presenter: 'John Papa',
-      duration: 20,
+      duration: 3,
       level: 'advanced',
       voters: ['John Papa', 'Paula']
-    }]
+    },
+      {
+        id: 15,
+        name: 'John Papa',
+        presenter: 'John Papa',
+        duration: 3,
+        level: 'advanced',
+        voters: ['John Papa', 'Paula','Tudor', 'Andreea', 'Maya']
+      },
+      {
+        id: 15,
+        name: 'John Papa',
+        presenter: 'John Papa',
+        duration: 3,
+        level: 'beginner',
+        voters: ['John Papa']
+      }]
   }
 ];
